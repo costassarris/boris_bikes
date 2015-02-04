@@ -6,7 +6,7 @@ class DockingStation
     @bikes = []
   end
 
-  def bike_count
+  def bike_count()
     @bikes.count
   end
 
@@ -24,5 +24,8 @@ class DockingStation
     bike_count == @capacity
   end
 
+  def available_bikes()
+    @bikes.reject {|bike| bike.broken?}
+  end
 
 end
