@@ -25,7 +25,7 @@ class DockingStation
   end
 
   def available_bikes()
-    @bikes.reject {|bike| bike.broken?}
+    @bikes.reject {|bike| bike.broken?} #reject method rejects any items that that meet the criteria set. In this case, it rejects any broken bikes, leaving only the available_bikes for output.
   end
 
 end
