@@ -2,6 +2,8 @@ module BikeContainer
 
   DEFAULT_CAPACITY = 10
 
+  # attr_reader :bikes ||= []
+
   def bikes
     @bikes ||= []
   end
@@ -19,7 +21,6 @@ module BikeContainer
   end
 
   def dock(bike)
-    # if the capacity is reached, raise an exception
     raise "Holder is full" if full?
     bikes << bike
   end
@@ -38,7 +39,10 @@ module BikeContainer
   end
 
   def available_bikes()
-    bikes.reject {|bike| bike.broken?} #The reject method rejects any items that that meet the criteria set. In this case, it rejects any broken bikes, leaving only the available_bikes for output.
+    bikes.reject {|bike| bike.broken?}
   end
 
 end
+
+
+
