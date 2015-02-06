@@ -42,7 +42,15 @@ module BikeContainer
     bikes.reject {|bike| bike.broken?}
   end
 
+  def release_broken_bikes
+    broken_bikes = []
+    bikes.each do |bike|
+      if bike.broken?
+        broken_bikes << bike
+        release(bike)
+      end
+    end
+    return broken_bikes
+  end
+
 end
-
-
-

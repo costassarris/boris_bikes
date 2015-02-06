@@ -1,10 +1,8 @@
 class Bike
 
-# def initialise(bike)
-#   @broken = false
-# end
-
-# attr_accessor :broken
+  def initialize()
+    @broken = false
+  end
 
   def broken?
     @broken
@@ -18,3 +16,11 @@ class Bike
   	@broken = false
   end
 end
+
+# def initialise(bike)
+#   @bike = bike
+#   @broken? = false
+#
+# end
+
+# attr_accessor :bike

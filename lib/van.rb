@@ -4,13 +4,13 @@ class Van
 
   include BikeContainer
 
-  def picks_up_broken_bikes(station)
-    station.bikes.each do |bike|
-      if bike.broken?
-       dock(bike)
-       station.release(bike)
-      end
-    end
-  end
+  # def collect_broken_bikes(station)
+  #   station.release_broken_bikeseach
+
+  #     if bike.broken?
+  #       dock(bike)
+  #     end
+  #   end
+  # end
 
 end
