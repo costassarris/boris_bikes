@@ -53,4 +53,15 @@ module BikeContainer
     return broken_bikes
   end
 
+  def release_fixed_bikes
+    fixed_bikes = []
+    bikes.each do |bike|
+      if !bike.broken?
+        fixed_bikes << bike
+        release(bike)
+      end
+    end
+    return fixed_bikes
+  end
+
 end

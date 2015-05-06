@@ -4,7 +4,8 @@ class ContainerHolder; include BikeContainer; end
 
 describe BikeContainer do
 
-  let(:bike) { Bike.new }
+  let(:bike) { double :bike, broken?: false }
+  let(:broken_bike) { double :bike, broken?: true }
   let(:holder) { ContainerHolder.new}
 
   def fill_holder
@@ -39,10 +40,14 @@ describe BikeContainer do
   end
 
   it 'should provide the list of available bikes' do
-    working_bike, broken_bike = Bike.new, Bike.new
-    broken_bike.break!
-    holder.dock(working_bike)
+    holder.dock(bike)
     holder.dock(broken_bike)
-    expect(holder.available_bikes).to eq([working_bike])
+    expect(holder.available_bikes).to eq([bike])
+  end
+
+  it 'should release all broken bikes' do
+    holder.dock(bike)
+    holder.dock(broken_bike)
+    expect(holder.release_broken_bikes).to eq [broken_bike]
   end
 end

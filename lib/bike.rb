@@ -16,11 +16,3 @@ class Bike
   	@broken = false
   end
 end
-
-# def initialise(bike)
-#   @bike = bike
-#   @broken? = false
-#
-# end
-
-# attr_accessor :bike
